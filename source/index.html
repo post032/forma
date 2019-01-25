@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <title>ITMO-form</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="css/style.css" rel="stylesheet">
+  <link type="text/css" href="css/jquery.datetimepicker.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <main class="page-main container">
+    <header>
+      <h1 class="visually-hidden">Форма регистрации</h1>
+    </header>
+    <section class="page-form">
+      <form class="form" action="index.html" method="post">
+        <h2 class="form__title">Информация о кандидате</h2>
+        <ul class="form__list">
+          <li class="form__item">
+            <label for="surname" class="form__name">Фамилия <sup>*</sup></label><br>
+            <input class="form__input" id="surname" type="text" name="surname" placeholder="Введите вашу фамилию" required>
+          </li>
+          <li class="form__item">
+            <label for="name" class="form__name">Имя <sup>*</sup></label><br>
+            <input class="form__input" id="name" type="text" name="name" placeholder="Введите ваше имя" required>
+          </li>
+          <li class="form__item">
+            <label for="phone" class="form__name">Телефон <sup>*</sup></label><br>
+            <input class="form__input" id="phone" type="text" name="phone" placeholder="+7 (___) ___ - __ - __" required>
+          </li>
+          <li class="form__item">
+            <label for="email" class="form__name">Email <sup>*</sup></label><br>
+            <input class="form__input" id="email" type="email" name="email" placeholder="primer@corp.ifmo.ru" required>
+          </li>
+          <li class="form__item">
+            <label for="birth" class="form__name">Дата рождения <sup>*</sup>
+              <svg id="datetimepicker" class="calendar" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.667 1.5H12.5V0.5C12.5 0.2235 12.2765 0 12 0C11.7235 0 11.5 0.2235 11.5 0.5V1.5H8.5V0.5C8.5 0.2235 8.276 0 8 0C7.724 0 7.5 0.2235 7.5 0.5V1.5H4.5V0.5C4.5 0.2235 4.276 0 4 0C3.724 0 3.5 0.2235 3.5 0.5V1.5H1.3335C0.597 1.5 0 2.0965 0 2.833V14.6665C0 15.403 0.597 16 1.3335 16H14.667C15.4035 16 16 15.403 16 14.6665V2.833C16 2.0965 15.4035 1.5 14.667 1.5ZM15 14.6665C15 14.8505 14.8505 15 14.667 15H1.3335C1.1495 15 1 14.8505 1 14.6665V2.833C1 2.6495 1.1495 2.5 1.3335 2.5H3.5V3.5C3.5 3.7765 3.724 4 4 4C4.276 4 4.5 3.7765 4.5 3.5V2.5H7.5V3.5C7.5 3.7765 7.724 4 8 4C8.276 4 8.5 3.7765 8.5 3.5V2.5H11.5V3.5C11.5 3.7765 11.7235 4 12 4C12.2765 4 12.5 3.7765 12.5 3.5V2.5H14.667C14.8505 2.5 15 2.6495 15 2.833V14.6665Z"
+                   />
+                <path d="M5.5 6H3.5V7.5H5.5V6Z" />
+                <path d="M5.5 8.5H3.5V10H5.5V8.5Z"  />
+                <path d="M5.5 11H3.5V12.5H5.5V11Z"/>
+                <path d="M9 11H7V12.5H9V11Z" />
+                <path d="M9 8.5H7V10H9V8.5Z" />
+                <path d="M9 6H7V7.5H9V6Z"/>
+                <path d="M12.5 11H10.5V12.5H12.5V11Z"/>
+                <path d="M12.5 8.5H10.5V10H12.5V8.5Z"/>
+                <path d="M12.5 6H10.5V7.5H12.5V6Z"/>
+              </svg>
+            </label><br>
+            <input class="form__date" id="birth" type="text" name="date" placeholder="03 / 05 / 1990" required>
+          </li>
+          <li class="form__item">
+            <label class="form__name" for="file">Фотография</label><br>
+            <label class="form__load" for="file">
+              <svg class="load" width="20" height="16" viewBox="0 0 20 16" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.6805 0H1.31948C0.591954 0 0 0.598448 0 1.33395V14.666C0 15.4016 0.591954 16 1.31948 16H18.6805C19.408 16 20 15.4016 20 14.666V1.33395C20 0.598448 19.4081 0 18.6805 0ZM1.31948 1.14339H18.6805C18.7827 1.14339 18.869 1.23066 18.869 1.33395V10.2123L15.8449 6.28862C15.6206 5.99751 15.2921 5.82303 14.9438 5.81007C14.5955 5.79689 14.2552 5.94659 14.0102 6.22032L10.0865 10.6042C9.99205 10.7097 9.78244 10.7388 9.66323 10.6631L6.43708 8.60908C5.88426 8.257 5.07515 8.29328 4.55528 8.69331L1.13098 11.328V1.33395C1.13098 1.23066 1.21731 1.14339 1.31948 1.14339ZM18.6805 14.8566H1.31948C1.21731 14.8566 1.13098 14.7693 1.13098 14.666V12.7648L5.24028 9.60314C5.38301 9.49338 5.68287 9.47996 5.83449 9.57654L9.06065 11.6305C9.64378 12.0018 10.4628 11.8879 10.9252 11.3713L14.8488 6.98746C14.8724 6.96116 14.8892 6.95315 14.9022 6.95262C14.9121 6.953 14.9313 6.96337 14.9528 6.99134L18.869 12.0724V14.666C18.869 14.7693 18.7827 14.8566 18.6805 14.8566Z"
+                  />
+                <path d="M8.35741 7.74045C9.46192 7.74045 10.3604 6.83207 10.3604 5.71544C10.3604 4.59881 9.46185 3.69043 8.35741 3.69043C7.25289 3.69043 6.35437 4.59889 6.35437 5.71544C6.35437 6.83199 7.25289 7.74045 8.35741 7.74045ZM8.35741 4.83374C8.8383 4.83374 9.22947 5.2292 9.22947 5.71536C9.22947 6.20153 8.8383 6.59699 8.35741 6.59699C7.87652 6.59699 7.48535 6.20153 7.48535 5.71536C7.48535 5.22927 7.87652 4.83374 8.35741 4.83374Z"
+                />
+              </svg>
+              <span class="load-blue">Прикрепить фото</span> (формат: .png, .jpg, не более 2 Мб)</label>
+            <input class="form__file" id="file" type="file" name="file">
+          </li>
+          <li class="form__item">
+            <label for="address" class="form__name">Адрес проживания<sup>*</sup></label><br>
+            <input class="form__address" id="address" type="text" name="address" value="" placeholder="Введите адрес вручную или поставьте точку на карте, тогда он подставится автоматически">
+          </li>
+        </ul>
+        <section class="map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15985.023534596256!2d30.313119142529295!3d59.94661155194117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1548405907663"  style="border:0" allowfullscreen></iframe>
+        </section>
+        <section class="form__dop">
+          <ul class="form__items">
+            <li class="form__item">
+              <p class="form__name">Дополнительная информация</p>
+            </li>
+            <li class="form__item">
+              <p class="form__info">Максимальное количество символов: 300</p>
+            </li>
+          </ul>
+          <textarea class="form__text" name="name" rows="6" cols="108" placeholder="Введите ваше сообщение" maxlength="300"></textarea>
+          <p class="form__must">Поля, отмеченные звездочкой <sup>*</sup>, обязательны для заполнения</p>
+          <div class="form__part">
+            <input class="form__button" id="submit" type="submit" name="submit" value="Отправить">
+          </div>
+        </section>
+      </form>
+    </section>
+  </main>
+
+  <section class="modal">
+    <div class="modal__position">
+          <div class="modal__form">
+            <p class="modal__info">Ваше сообщение успешно отправлено</p>
+            <span class="modal__close"></span>
+          </div>
+          </div>
+  </section>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.maskedinput.min.js"></script>
+  <script src="js/jquery.datetimepicker.full.min.js"></script>
+  <script type="text/javascript" src="js/style.js"></script>
+</body>
+
+</html>
